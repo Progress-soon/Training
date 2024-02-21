@@ -1,0 +1,17 @@
+
+def missing_integer (number):
+    
+  n = len(number) + 1 # because 1 integer is missing
+  
+  expected = n * (n+1) // 2 # arithmetic series formula
+  
+  actual_sum = sum(number) # sum of the list
+  
+  missing = expected - actual_sum # finding missing value by subtracting expected by actual sum
+  
+  return missing
+  
+# Test cases
+result = missing_integer ([1,2,4,5,6])
+print ("The missing number is: " + str(result))
+  
