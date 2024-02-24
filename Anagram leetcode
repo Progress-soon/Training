@@ -1,0 +1,26 @@
+ def isAnagram(self, s, t):
+        if len(s) != len(t):
+            return False
+
+        my_dict = {}
+
+        for x in s:
+            # if it is not in dict it means it is seeing it for the 1st time
+            if x not in my_dict: 
+                # We add 1 to it for eg R = 1
+                my_dict[x] = 1 
+            else:
+                # If R was already in dict we add 1 it becomes R = n + 1
+                my_dict[x] += 1
+        
+        for y in t:
+            if y not in my_dict:
+                return False # because it means S and t does n't have same letters
+            else:
+                my_dict[y] -= 1 # if it in s and t we remove 1 to make it 0 
+        
+        for value in my_dict.values():
+            if value != 0:
+                return False
+            else:
+                return True
