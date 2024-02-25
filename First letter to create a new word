@@ -1,0 +1,27 @@
+''' given an integer as a string, take the first letter of each number in the string and create a new word for eg: Given "5113", the output is "foot", cuz 5 = five, 1 = one, 3 = three, so "foot"'''
+
+
+def question_5(n):
+    
+    my_dict = {
+        "0": "Zero",
+        "1": "One",
+        "2": "Two",
+        "3": "Three",
+        "4": "Four",
+        "5": "Five",
+        "6": "Six",
+        "7": "Seven",
+        "8": "Eight",
+        "9": "Nine"
+    }
+        
+    new = ''
+    for x in str(n):
+        if x.isdigit():
+            new += my_dict[x][0]
+        else:
+            pass
+    return new
+result = question_5("5113")
+print (result)
